@@ -1,0 +1,194 @@
+/* Carousel container */
+.carousel-container {
+  position: relative;
+  width: 100%; /* Ensures the container takes up full width */
+  height: 100vh; /* Makes the container take the full viewport height */
+  overflow: hidden; /* Hides the excess images */
+}
+
+/* Carousel */
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Slide transition */
+}
+
+/* Carousel item */
+.carousel-item {
+  min-width: 100%;
+  transition: transform 0.5s ease-in-out;
+  position: relative;
+}
+
+/* Carousel item image */
+.carousel-item img {
+  width: 100%; /* Ensure images fill the container width */
+  height: 100vh; /* Ensure images take full viewport height */
+  object-fit: cover; /* Ensures images maintain their aspect ratio and cover the container */
+}
+
+/* Approach: Dark Overlay on Image */
+.carousel-item::before {
+  content: ''; /* Empty content */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 1; /* Places overlay behind the text */
+}
+
+/* Caption */
+.carousel-caption {
+  position: absolute;
+  top: 50%; /* Vertically center */
+  left: 50%; /* Horizontally center */
+  transform: translate(-50%, -50%); /* Center the element by adjusting it based on its own width/height */
+  text-align: center;
+  color: #fff;
+  width: 100%; /* Ensure the caption is spread across the full width of the container */
+  z-index: 2; /* Ensure text stays above the overlay */
+  width: 80%; /* Adjust the width (set to 80% of the container width, for example) */
+  max-width: 1000px; 
+}
+
+/* Heading */
+.carousel-heading {
+  font-size: 74px;
+  font-weight: 800;
+  line-height: 1.2; /* Slightly increased for better readability */
+  letter-spacing: 1px; /* Corrected unit from 1.px to 1px */
+  margin: 0;
+  margin-bottom: 40px;
+  opacity: 0; /* Initially hidden */
+  animation: fadeInUp 1s forwards; /* Add the animation */
+  animation-delay: 0.5s; /* Delay animation for smooth entrance */
+}
+
+/* Caption text */
+.carousel-caption-text {
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.5; /* Improves readability by increasing space between lines */
+  letter-spacing: 0.5px; /* Adds subtle spacing between characters */
+  margin: 10px 0;
+  opacity: 0; /* Initially hidden */
+  animation: fadeInUp 1s forwards; /* Add the animation */
+  animation-delay: 1s; /* Delay animation for smooth entrance */
+}
+
+/* Carousel buttons */
+.carousel-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Increase the gap between buttons */
+  margin-top: 20px;
+}
+
+.carousel-buttons button {
+  padding: 12px 24px; /* Increase padding for larger buttons */
+  font-size: 16px; /* Increase font size for better visibility */
+  text-transform: uppercase;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  min-width: 150px; /* Optional: Add min-width for more consistent button size */
+}
+
+.carousel-buttons .btn-primary {
+  background-color: #90C73E;
+  color: white;
+}
+
+.carousel-buttons .btn-secondary {
+  background-color: #0A1129;
+  color: white;
+}
+
+.carousel-buttons button:hover {
+  opacity: 0.8;
+}
+
+/* Keyframe animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navigation Controls */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  background-color: rgba(144, 199, 62, 0.8); /* Light green with slight opacity */
+  color: #fff; /* Ensures the text is white for better contrast */
+  font-size: 30px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Hide navigation arrows on small screens */
+@media (max-width: 768px) {
+  .carousel-heading {
+    font-size: 60px; /* Adjust heading size for smaller screens */
+  }
+
+  .carousel-caption-text {
+    font-size: 16px; /* Adjust caption text size for smaller screens */
+  }
+
+  .carousel-buttons button {
+    font-size: 14px; /* Adjust button font size */
+    padding: 10px 20px; /* Adjust padding */
+  }
+
+  .carousel-control {
+    font-size: 25px; /* Smaller control buttons */
+  }
+
+  /* Adjust the caption width on tablets */
+  .carousel-caption {
+    width: 90%; /* Increase width for better readability */
+  }
+}
+
+/* Hide navigation arrows on extra small screens */
+@media (max-width: 480px) {
+  .carousel-heading {
+    font-size: 40px; /* Further adjust heading size */
+  }
+
+  .carousel-caption-text {
+    font-size: 14px; /* Further adjust caption text size */
+  }
+
+  .carousel-buttons button {
+    font-size: 12px; /* Adjust button font size */
+    padding: 8px 18px; /* Adjust padding */
+  }
+
+  .carousel-control {
+    font-size: 20px; /* Smaller control buttons */
+  }
+
+  /* Adjust the caption width on mobile */
+  .carousel-caption {
+    width: 90%; /* Ensure the caption takes up most of the screen width */
+  }
+}
