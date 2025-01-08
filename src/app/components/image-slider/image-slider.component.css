@@ -144,25 +144,25 @@
 /* Hide navigation arrows on small screens */
 @media (max-width: 768px) {
   .carousel-heading {
-    font-size: 50px; /* Recommended smaller heading font size for mobile */
+    font-size: 50px;
   }
 
   .carousel-caption-text {
-    font-size: 14px; /* Adjusted caption text size for better readability */
+    font-size: 14px;
   }
 
   .carousel-buttons button {
-    font-size: 12px; /* Adjusted button font size */
-    padding: 8px 16px; /* Adjust padding */
+    font-size: 14px; /* Slightly increased button font size */
+    padding: 10px 20px; /* Slightly increased padding */
   }
 
   .carousel-control {
-    font-size: 20px; /* Smaller control buttons */
+    font-size: 20px;
   }
 
   /* Adjust the caption width on tablets */
   .carousel-caption {
-    width: 90%; /* Ensure caption fits comfortably */
+    width: 90%;
   }
 }
 
@@ -170,23 +170,23 @@
 @media (max-width: 480px) {
   .carousel-caption {
     width: 90%;
-    max-width: 500px; /* Ensure the caption does not stretch too wide */
+    max-width: 500px;
   }
 
   .carousel-heading {
-    font-size: 40px; /* Further decrease the font size for small screens */
+    font-size: 40px;
   }
 
   .carousel-caption-text {
-    font-size: 12px; /* Adjusted further for better readability */
+    font-size: 12px;
   }
 
   .carousel-buttons button {
-    font-size: 10px; /* Smaller button font size */
-    padding: 6px 12px; /* Adjust padding */
+    font-size: 14px; /* Increased button font size */
+    padding: 12px 24px; /* Increased padding to make buttons larger */
   }
 
   .carousel-control {
-    font-size: 16px; /* Even smaller control buttons */
+    font-size: 16px;
   }
 }
