@@ -28,7 +28,7 @@
 
 /* Approach: Dark Overlay on Image */
 .carousel-item::before {
-  content: ''; /* Empty content */
+  content: ""; /* Empty content */
   position: absolute;
   top: 0;
   left: 0;
@@ -43,13 +43,16 @@
   position: absolute;
   top: 50%; /* Vertically center */
   left: 50%; /* Horizontally center */
-  transform: translate(-50%, -50%); /* Center the element by adjusting it based on its own width/height */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center the element by adjusting it based on its own width/height */
   text-align: center;
   color: #fff;
   width: 100%; /* Ensure the caption is spread across the full width of the container */
   z-index: 2; /* Ensure text stays above the overlay */
   width: 80%; /* Adjust the width (set to 80% of the container width, for example) */
-  max-width: 1000px; 
+  max-width: 1000px;
 }
 
 /* Heading */
@@ -92,16 +95,15 @@
   font-weight: 500;
   border: none;
   cursor: pointer;
- 
 }
 
 .carousel-buttons .btn-primary {
-  background-color: #90C73E;
+  background-color: #90c73e;
   color: white;
 }
 
 .carousel-buttons .btn-secondary {
-  background-color: #0A1129;
+  background-color: #0a1129;
   color: white;
 }
 
@@ -126,7 +128,12 @@
   position: absolute;
   top: 50%;
   z-index: 10;
-  background-color: rgba(144, 199, 62, 0.8); /* Light green with slight opacity */
+  background-color: rgba(
+    144,
+    199,
+    62,
+    0.8
+  ); /* Light green with slight opacity */
   color: #fff; /* Ensures the text is white for better contrast */
   font-size: 30px;
   padding: 10px;
@@ -145,7 +152,6 @@
 
 /* Hide navigation arrows on small screens */
 @media (max-width: 768px) {
-
   .carousel-heading {
     font-size: 60px; /* Adjust heading size for smaller screens */
   }
@@ -171,9 +177,9 @@
 
 /* Hide navigation arrows on extra small screens */
 @media (max-width: 480px) {
-  .carousel-caption{
-    padding: 10px;
-    flex-wrap: wrap;
+  .carousel-caption {
+    width: 50%; /* Adjust the width (set to 80% of the container width, for example) */
+    max-width: 500px;
   }
   .carousel-heading {
     font-size: 50px; /* Further adjust heading size */
