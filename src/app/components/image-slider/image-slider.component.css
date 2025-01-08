@@ -92,7 +92,7 @@
   font-weight: 500;
   border: none;
   cursor: pointer;
-  min-width: 150px; /* Optional: Add min-width for more consistent button size */
+ 
 }
 
 .carousel-buttons .btn-primary {
@@ -145,6 +145,7 @@
 
 /* Hide navigation arrows on small screens */
 @media (max-width: 768px) {
+
   .carousel-heading {
     font-size: 60px; /* Adjust heading size for smaller screens */
   }
@@ -170,8 +171,12 @@
 
 /* Hide navigation arrows on extra small screens */
 @media (max-width: 480px) {
+  .carousel-caption{
+    padding: 10px;
+    flex-wrap: wrap;
+  }
   .carousel-heading {
-    font-size: 40px; /* Further adjust heading size */
+    font-size: 50px; /* Further adjust heading size */
   }
 
   .carousel-caption-text {
