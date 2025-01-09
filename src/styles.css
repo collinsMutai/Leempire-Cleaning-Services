@@ -7,6 +7,8 @@ body {
 h1,
 h2,
 h3,
-h4, button, a {
+h4,
+button,
+a {
   font-family: "Poppins", serif;
 }

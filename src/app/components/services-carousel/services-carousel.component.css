@@ -1,0 +1,81 @@
+/* Remove card border */
+
+.main-container {
+  padding: 60px 0px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  line-height: 40px;
+}
+
+.card {
+  border: none; /* No border around the card */
+  margin-bottom: 20px; /* Add space between cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add box shadow */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the content in the card */
+  flex-direction: column; /* Ensure content stacks vertically */
+  padding: 10px; /* Reduced padding inside the card */
+}
+
+/* Image styling */
+.card-img-top {
+  height: 200px;
+  width: 200px; /* Set width equal to height for circular image */
+  object-fit: cover; /* Ensure the image covers the space nicely */
+  border-radius: 50%; /* Circular border radius */
+  display: block; /* Ensure the image is block-level */
+  margin-bottom: 15px; /* Reduced space between image and text */
+}
+
+/* Title and Caption Styling */
+.card-body {
+  text-align: center; /* Center the text */
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #051729;
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+
+.card-text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  margin-bottom: 10px;
+  color: #7A7F88;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767px) {
+  .main-container {
+    padding: 60px 15px;
+  }
+
+  .card {
+    margin-bottom: 15px; /* Reduce margin on smaller screens */
+    padding: 8px; /* Further reduce padding on smaller screens */
+  }
+
+  .card-img-top {
+    height: 150px; /* Adjust the image size on smaller screens */
+    width: 150px;
+  }
+
+  .card-title {
+    font-size: 24px;
+
+    line-height: 34px;
+    margin-bottom: 15px;
+    padding-bottom: 24px;
+  }
+}
