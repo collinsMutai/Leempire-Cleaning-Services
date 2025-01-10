@@ -1,0 +1,86 @@
+.main-container {
+  padding: 60px 20px;
+}
+
+.row {
+  display: flex; /* Flexbox applied to row */
+  align-items:top;
+
+}
+
+.col-md-6 {
+  display: flex; /* Make each column a flex container */
+  flex-direction: column; /* Align content vertically */
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  line-height: 40px;
+}
+
+.about-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #051729;
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+
+.about-text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  margin-bottom: 10px;
+  color: #7a7f88;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 5px;
+  line-height: 17px;
+  letter-spacing: normal;
+  height: 51px;
+  color: #fff;
+  background: #90c73e;
+  outline: none;
+  border: 1px solid transparent;
+  padding: 12px;
+  cursor: pointer;
+  width: 240px;
+  margin-top: 15px;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s; /* Added transition effect */
+}
+
+.action-btn:hover {
+  color: #90c73e; /* Change text color on hover */
+  background-color: #fff; /* Change background color on hover */
+  border-color: #90c73e; /* Change border color on hover */
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensures image is responsive and covers the container */
+  flex-grow: 1; /* Makes image grow to match the height of the column */
+}
+
+
+@media (max-width: 768px) {
+
+    .main-container{
+        padding: 20px;
+    }
+
+    .row{
+        gap: 30px;
+    }
+}
