@@ -1,0 +1,131 @@
+/* Transparent Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent black background */
+  color: white;
+  z-index: 10; /* Ensure the navbar is on top of the content */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;  /* Space between logo and hamburger */
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo */
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  margin: 0; /* Remove any default margin */
+}
+
+/* Navigation links container */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-left: auto; /* Push the nav links to the right */
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #90c73e; /* Green color on hover */
+}
+
+/* Add some padding to the body to prevent overlap with the navbar */
+body {
+  padding-top: 80px; /* Adjust according to the navbar height */
+}
+
+/* Hamburger Menu */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.menu-icon .bar {
+  height: 4px;
+  background-color: white;
+  width: 100%;
+  border-radius: 2px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  /* Adjust the navbar for mobile screens */
+  .navbar-container {
+    flex-direction: row; /* Align logo and hamburger menu horizontally */
+    justify-content: space-between; /* Space between logo and hamburger */
+    align-items: center; /* Center align logo and hamburger */
+  }
+
+  /* Logo */
+  .navbar .logo {
+    font-size: 16px; /* Reduce font size of logo on mobile */
+    font-weight: normal; /* Optionally reduce font weight on mobile */
+    margin-right: 10px; /* Small margin to ensure some space between logo and hamburger */
+  }
+
+  /* Navigation links */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 0; /* Remove any margin between logo and links */
+    text-align: center;
+    position: absolute;  /* Position links absolutely */
+    top: 100%; /* Position links directly below the logo and hamburger */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Optional background color for the links */
+  }
+
+  .nav-links.active {
+    display: flex; /* Make links visible when hamburger is clicked */
+  }
+
+  .nav-links li {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .nav-links a {
+    font-size: 14px; /* Reduce font size of links on mobile */
+  }
+
+  /* Make the hamburger menu visible on small screens */
+  .menu-icon {
+    display: flex;
+    margin-left: auto; /* Align hamburger menu to the right */
+  }
+
+  /* Ensure that the navbar logo and hamburger are properly aligned */
+  .navbar-container {
+    justify-content: space-between; /* Ensure logo and hamburger are inline */
+  }
+}

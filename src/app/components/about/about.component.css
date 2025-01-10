@@ -1,16 +1,58 @@
+/* Keyframe Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInScaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .main-container {
   padding: 60px 20px;
+  opacity: 0; /* Start with opacity 0 */
+  transform: translateY(20px); /* Initial position */
+  transition: opacity 2s ease, transform 2s ease; /* Slow down transition to 2s */
+}
+
+/* When component becomes visible */
+.main-container.visible {
+  opacity: 1;
+  transform: translateY(0); /* Final position */
 }
 
 .row {
-  display: flex; /* Flexbox applied to row */
-  align-items:top;
-
+  display: flex; 
+  align-items: top;
 }
 
 .col-md-6 {
-  display: flex; /* Make each column a flex container */
-  flex-direction: column; /* Align content vertically */
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
@@ -20,6 +62,7 @@
   margin-bottom: 20px;
   padding-bottom: 20px;
   line-height: 40px;
+  animation: fadeInUp 2s ease-out; /* Slow down title animation to 2s */
 }
 
 .about-title {
@@ -57,30 +100,29 @@
   cursor: pointer;
   width: 240px;
   margin-top: 15px;
-  transition: color 0.2s, background-color 0.2s, border-color 0.2s; /* Added transition effect */
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  animation: fadeInScaleUp 2s ease-out; /* Slow down button animation to 2s */
 }
 
 .action-btn:hover {
-  color: #90c73e; /* Change text color on hover */
-  background-color: #fff; /* Change background color on hover */
-  border-color: #90c73e; /* Change border color on hover */
+  color: #90c73e;
+  background-color: #fff;
+  border-color: #90c73e;
 }
 
 img {
   width: 100%;
   height: auto;
-  object-fit: cover; /* Ensures image is responsive and covers the container */
-  flex-grow: 1; /* Makes image grow to match the height of the column */
+  object-fit: cover;
+  flex-grow: 1;
+  animation: zoomIn 2s ease-out; /* Slow down image animation to 2s */
 }
 
-
 @media (max-width: 768px) {
-
-    .main-container{
-        padding: 20px;
-    }
-
-    .row{
-        gap: 30px;
-    }
+  .main-container {
+    padding: 20px;
+  }
+  .row {
+    gap: 30px;
+  }
 }

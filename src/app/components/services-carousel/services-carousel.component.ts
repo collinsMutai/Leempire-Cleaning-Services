@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  ElementRef,
+  ViewChild,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,8 +14,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
 })
-export class ServicesCarouselComponent implements OnInit {
-  images: { url: string; title: string; caption: string }[] = [
+export class ServicesCarouselComponent implements OnInit, AfterViewInit {
+  @ViewChild('serviceCard') serviceCard: ElementRef | undefined;
+  images = [
     {
       url: 'https://smartdata.tonytemplates.com/cleaning-service-v3/ele-demo1/wp-content/uploads/sites/7/2017/06/service-circle-1.png',
       title: 'Residential Cleaning',
@@ -46,5 +53,27 @@ export class ServicesCarouselComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('Images:', this.images);
+  }
+
+  ngAfterViewInit() {
+    const serviceCards = document.querySelectorAll('.card');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const element = entry.target as HTMLElement;
+          if (entry.isIntersecting) {
+            element.classList.add('in-view'); // Apply animation when in view
+          } else {
+            element.classList.remove('in-view'); // Remove animation when out of view
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the element is in view
+      }
+    );
+
+    serviceCards.forEach((card) => observer.observe(card));
   }
 }
