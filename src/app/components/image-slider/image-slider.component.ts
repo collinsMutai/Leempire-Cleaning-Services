@@ -9,7 +9,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   imports: [CommonModule],
 })
 export class ImageSliderComponent implements OnInit, OnDestroy {
-  // Array of images, headings, and captions for the carousel
   images: { src: string; heading: string; caption: string }[] = [
     {
       src: 'https://cleaning.ancorathemes.com/wp-content/uploads/2023/10/179_3-3-copyright.jpg',
@@ -33,7 +32,6 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
     },
   ];
 
-  // Track the current slide index
   currentIndex = 0;
 
   private slideInterval: any;
@@ -41,34 +39,30 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
   constructor() {}
 
   ngOnInit(): void {
-    // Start the carousel auto-slide every 3 seconds
     this.slideInterval = setInterval(() => {
       this.moveToNext();
     }, 3000);
   }
 
   ngOnDestroy(): void {
-    // Clean up the interval when the component is destroyed
     if (this.slideInterval) {
       clearInterval(this.slideInterval);
     }
   }
 
-  // Move to the next slide
   moveToNext() {
     if (this.currentIndex < this.images.length - 1) {
       this.currentIndex++;
     } else {
-      this.currentIndex = 0; // Loop back to the first slide
+      this.currentIndex = 0;
     }
   }
 
-  // Move to the previous slide
   moveToPrev() {
     if (this.currentIndex > 0) {
       this.currentIndex--;
     } else {
-      this.currentIndex = this.images.length - 1; // Loop back to the last slide
+      this.currentIndex = this.images.length - 1;
     }
   }
 }

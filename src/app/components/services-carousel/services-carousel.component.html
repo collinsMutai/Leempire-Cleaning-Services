@@ -1,8 +1,12 @@
-<div class="container main-container">
+<div class="container-fluid main-container">
   <div class="row">
     <h1 class="title">Our Cleaning Services</h1>
-    <!-- Loop through the images to create Bootstrap cards -->
-    <div class="col-12 col-md-4" *ngFor="let image of images; let i = index" [attr.data-index]="i">
+
+    <div
+      class="col-12 col-md-4"
+      *ngFor="let image of images; let i = index"
+      [attr.data-index]="i"
+    >
       <div class="card" #serviceCard>
         <img [src]="image.url" class="card-img-top" alt="Image" />
         <div class="card-body">

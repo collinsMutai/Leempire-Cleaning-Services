@@ -3,11 +3,18 @@ import { ImageSliderComponent } from '../image-slider/image-slider.component';
 import { ServicesCarouselComponent } from '../services-carousel/services-carousel.component';
 import { AboutComponent } from '../about/about.component';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { ContactComponent } from '../contact/contact.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent,  ImageSliderComponent,   AboutComponent, ServicesCarouselComponent],
+  imports: [
+    NavbarComponent,
+    ImageSliderComponent,
+    AboutComponent,
+    ServicesCarouselComponent,
+    ContactComponent
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

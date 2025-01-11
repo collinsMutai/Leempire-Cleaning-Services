@@ -4,7 +4,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css'],
-  standalone: true
+  standalone: true,
 })
 export class AboutComponent implements OnInit {
   isVisible = false;
@@ -20,7 +20,6 @@ export class AboutComponent implements OnInit {
     this.checkVisibility();
   }
 
-  // Check if the component is in the viewport
   private checkVisibility() {
     const element = document.getElementById('about-section');
     if (element) {

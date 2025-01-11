@@ -63,14 +63,14 @@ export class ServicesCarouselComponent implements OnInit, AfterViewInit {
         entries.forEach((entry) => {
           const element = entry.target as HTMLElement;
           if (entry.isIntersecting) {
-            element.classList.add('in-view'); // Apply animation when in view
+            element.classList.add('in-view');
           } else {
-            element.classList.remove('in-view'); // Remove animation when out of view
+            element.classList.remove('in-view');
           }
         });
       },
       {
-        threshold: 0.5, // Trigger when 50% of the element is in view
+        threshold: 0.5,
       }
     );
 
