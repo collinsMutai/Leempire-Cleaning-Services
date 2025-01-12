@@ -21,7 +21,7 @@ export class AboutComponent implements OnInit {
   }
 
   private checkVisibility() {
-    const element = document.getElementById('about-section');
+    const element = document.getElementById('about');
     if (element) {
       const rect = element.getBoundingClientRect();
       this.isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;

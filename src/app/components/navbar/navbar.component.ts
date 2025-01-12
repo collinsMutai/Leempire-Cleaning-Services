@@ -14,4 +14,13 @@ export class NavbarComponent {
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
+
+  navigateTo(page: string) {
+    console.log(`Navigating to ${page}`);
+
+    const element = document.getElementById(page);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }
