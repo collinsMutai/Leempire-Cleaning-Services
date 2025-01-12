@@ -123,8 +123,11 @@ img {
 
   .row {
     gap: 30px;
+    justify-content: center;
   }
-
+  .col-md-6 {
+    width: 100%;
+  }
   .title {
     text-align: center;
   }

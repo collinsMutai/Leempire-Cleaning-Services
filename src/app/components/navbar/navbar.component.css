@@ -20,7 +20,7 @@
 .navbar .logo {
   font-size: 24px;
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: capitalize;
   color: white;
   text-decoration: none;
   margin: 0;
@@ -44,6 +44,10 @@
   text-transform: uppercase;
   font-weight: 500;
   transition: color 0.3s ease;
+}
+
+.brand-name {
+  text-transform: none;
 }
 
 .nav-links a:hover {

@@ -4,6 +4,7 @@ import { ServicesCarouselComponent } from '../services-carousel/services-carouse
 import { AboutComponent } from '../about/about.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { ContactComponent } from '../contact/contact.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,8 @@ import { ContactComponent } from '../contact/contact.component';
     ImageSliderComponent,
     AboutComponent,
     ServicesCarouselComponent,
-    ContactComponent
+    ContactComponent,
+    FooterComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
