@@ -9,36 +9,35 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  isMenuOpen = false; // Track the state of the menu
-  isMobile = false; // Flag for mobile detection
+  isMenuOpen = false; 
+  isMobile = false; 
 
-  // Listen to window resize to detect mobile devices
   @HostListener('window:resize', [])
   onResize() {
-    this.isMobile = window.innerWidth <= 768; // Define mobile screen size
+    this.isMobile = window.innerWidth <= 768; 
   }
 
   ngOnInit() {
-    this.onResize(); // Check on initialization if the screen is mobile
+    this.onResize(); 
   }
 
-  // Toggle menu on mobile
+  
   toggleMenu() {
     if (this.isMobile) {
-      this.isMenuOpen = !this.isMenuOpen; // Toggle the menu open/close
+      this.isMenuOpen = !this.isMenuOpen;
     }
   }
 
-  // Navigate to the specified section (smooth scrolling)
+  
   navigateTo(page: string) {
     console.log(`Navigating to ${page}`);
     if (this.isMenuOpen) {
-      this.isMenuOpen = false; // Close the menu when a link is clicked on mobile
+      this.isMenuOpen = false; 
     }
 
     const element = document.getElementById(page);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' }); // Smooth scrolling to the section
+      element.scrollIntoView({ behavior: 'smooth' }); 
     }
   }
 }

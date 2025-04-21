@@ -1,17 +1,19 @@
 <div class="container-fluid main-container" id="services">
-  <div class="row">
+  <div class="row justify-content-center">
     <h1 class="title">Our Cleaning Services</h1>
 
     <div
       class="col-12 col-md-4"
-      *ngFor="let image of images; let i = index"
-      [attr.data-index]="i"
+      
+      
     >
       <div class="card" #serviceCard>
-        <img [src]="image.url" class="card-img-top" alt="Image" />
+        <img src="https://smartdata.tonytemplates.com/cleaning-service-v3/ele-demo1/wp-content/uploads/sites/7/2017/06/service-circle-4.png" class="card-img-top" alt="Image" />
         <div class="card-body">
-          <h5 class="card-title">{{ image.title }}</h5>
-          <p class="card-text">{{ image.caption }}</p>
+          <h5 class="card-title">Commercial Cleaning</h5>
+          <p class="card-text">
+            Professional cleaning staff with attention to detail.
+          </p>
         </div>
       </div>
     </div>
