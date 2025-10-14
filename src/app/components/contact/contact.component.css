@@ -1,3 +1,11 @@
+.contact-snackbar {
+  background: #333 !important;
+  color: #fff !important;
+  font-weight: 500;
+  border-radius: 6px !important;
+}
+
+
 @keyframes fadeInUp {
   0% {
     opacity: 0;

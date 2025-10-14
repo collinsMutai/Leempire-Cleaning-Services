@@ -6,18 +6,22 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import emailjs from '@emailjs/browser';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, MatSnackBarModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent implements OnInit, AfterViewInit {
   contactForm: FormGroup;
+  isSending = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required]],
       phone: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
@@ -28,6 +32,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {}
 
+  // ✅ Keeping your original observer logic unchanged
   ngAfterViewInit(): void {
     const elements = document.querySelectorAll('.animate-on-scroll');
     const observer = new IntersectionObserver(
@@ -42,16 +47,48 @@ export class ContactComponent implements OnInit, AfterViewInit {
       { threshold: 0.5 }
     );
 
-    elements.forEach((element) => {
-      observer.observe(element);
-    });
+    elements.forEach((element) => observer.observe(element));
   }
 
   onSubmit(): void {
-    if (this.contactForm.valid) {
-      console.log('Form Submitted:', this.contactForm.value);
-    } else {
-      console.log('Form not valid');
+    if (this.contactForm.invalid) {
+      this.showSnack('⚠️ Please fill in all required fields.', 'Close');
+      return;
     }
+
+    this.isSending = true;
+    const formData = this.contactForm.value;
+
+    emailjs
+      .send(
+        environment.emailjs.serviceID,
+        environment.emailjs.templateID,
+        {
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          message: formData.message,
+        },
+        environment.emailjs.publicKey
+      )
+      .then(() => {
+        this.isSending = false;
+        this.contactForm.reset();
+        this.showSnack('✅ Message sent successfully!', 'Close');
+      })
+      .catch((error) => {
+        this.isSending = false;
+        console.error('Email send failed:', error);
+        this.showSnack('❌ Failed to send message. Please try again.', 'Close');
+      });
+  }
+
+  private showSnack(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 3000,
+      horizontalPosition: 'right',
+      verticalPosition: 'top',
+      panelClass: ['contact-snackbar'],
+    });
   }
 }
