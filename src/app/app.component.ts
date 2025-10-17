@@ -10,5 +10,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'leempirecleaningservices';
+  // title = 'Professional Cleaning Services in Acworth, GA | Veteran-Owned';
 }

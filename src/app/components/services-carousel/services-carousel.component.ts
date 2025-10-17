@@ -7,6 +7,15 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+interface Service {
+  url: string;
+  title: string;
+  caption: string;
+  alt: string;
+  width?: number;
+  height?: number;
+}
+
 @Component({
   selector: 'app-services-carousel',
   templateUrl: './services-carousel.component.html',
@@ -16,43 +25,54 @@ import { CommonModule } from '@angular/common';
 })
 export class ServicesCarouselComponent implements OnInit, AfterViewInit {
   @ViewChild('serviceCard') serviceCard: ElementRef | undefined;
-  images = [
+
+  services: Service[] = [
     {
-      url: 'https://smartdata.tonytemplates.com/cleaning-service-v3/ele-demo1/wp-content/uploads/sites/7/2017/06/service-circle-1.png',
-      title: 'Residential Cleaning',
-      caption: 'High-quality cleaning services to make your space shine.',
+      url: 'assets/images/residential-cleaning-acworth-georgia.jpg',
+      title: 'House Cleaning',
+      caption: 'Reliable and thorough house cleaning for homes in Acworth, GA and nearby areas.',
+      alt: 'House cleaning service by LeEmpire Cleaning Services in Acworth, GA',
+      width: 400,
+      height: 300,
     },
     {
-      url: 'https://smartdata.tonytemplates.com/cleaning-service-v3/ele-demo1/wp-content/uploads/sites/7/2017/06/service-circle-2.png',
-      title: 'Move-In/Move-Out Cleaning',
-      caption: 'Eco-friendly cleaning options for a healthy environment.',
+      url: 'assets/images/move-out-cleaning-acworth.jpg',
+      title: 'Move-Out Cleaning',
+      caption: 'Comprehensive move-out cleaning to get your home ready for the next occupant.',
+      alt: 'Move-out cleaning service by LeEmpire Cleaning Services in Acworth, GA',
+      width: 400,
+      height: 300,
     },
     {
-      url: 'https://smartdata.tonytemplates.com/cleaning-service-v3/ele-demo1/wp-content/uploads/sites/7/2017/06/service-circle-3.png',
-      title: 'Apartment Cleaning',
-      caption: 'Affordable and reliable cleaning for homes and offices.',
-    },
-    {
-      url: 'https://smartdata.tonytemplates.com/cleaning-service-v3/ele-demo1/wp-content/uploads/sites/7/2017/06/service-circle-4.png',
+      url: 'assets/images/commercial-cleaning-acworth-ga.jpg',
       title: 'Commercial Cleaning',
-      caption: 'Professional cleaning staff with attention to detail.',
+      caption: 'Professional commercial cleaning for offices, retail, and business spaces.',
+      alt: 'Commercial cleaning service by LeEmpire Cleaning Services in Acworth, GA',
+      width: 400,
+      height: 300,
     },
     {
-      url: 'https://smartdata.tonytemplates.com/cleaning-service-v3/ele-demo1/wp-content/uploads/sites/7/2017/06/blog-post-img-2-2.jpg',
-      title: 'Carpet Cleaning',
-      caption: 'Top-rated service with a focus on customer satisfaction.',
+      url: 'assets/images/eco-friendly-cleaning-acworth-ga.jpg',
+      title: 'Eco-Friendly Cleaning',
+      caption: 'Use green and sustainable cleaning methods to protect your space and health.',
+      alt: 'Eco-friendly cleaning service by LeEmpire Cleaning Services in Acworth, GA',
+      width: 400,
+      height: 300,
     },
     {
-      url: 'https://smartdata.tonytemplates.com/cleaning-service-v3/ele-demo1/wp-content/uploads/sites/7/2017/06/blog-post-img-3.jpg',
-      title: 'Window Cleaning',
-      caption: 'Efficient cleaning solutions to meet all your needs.',
+      url: 'assets/images/maid-service-acworth.jpg',
+      title: 'Maid Service',
+      caption: 'Regular maid service plans for homes and offices in the Acworth area.',
+      alt: 'Maid service by LeEmpire Cleaning Services in Acworth, GA',
+      width: 400,
+      height: 300,
     },
   ];
 
   constructor() {}
 
   ngOnInit(): void {
-    console.log('Images:', this.images);
+    console.log('Services:', this.services);
   }
 
   ngAfterViewInit() {

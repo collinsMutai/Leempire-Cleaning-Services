@@ -12,3 +12,7 @@ button,
 a {
   font-family: "Poppins", serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}

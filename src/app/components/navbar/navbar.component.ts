@@ -30,7 +30,7 @@ export class NavbarComponent {
 
   
   navigateTo(page: string) {
-    console.log(`Navigating to ${page}`);
+    // console.log(`Navigating to ${page}`);
     if (this.isMenuOpen) {
       this.isMenuOpen = false; 
     }

@@ -75,7 +75,7 @@
   margin-top: 20px;
 }
 
-.carousel-buttons button {
+.carousel-buttons a {
   padding: 12px 24px;
   font-size: 16px;
   text-transform: uppercase;
@@ -94,7 +94,7 @@
   color: white;
 }
 
-.carousel-buttons button:hover {
+.carousel-buttons a:hover {
   opacity: 0.8;
 }
 
@@ -139,7 +139,7 @@
     font-size: 14px;
   }
 
-  .carousel-buttons button {
+  .carousel-buttons a {
     font-size: 14px;
     padding: 10px 20px;
   }
@@ -167,7 +167,7 @@
     font-size: 12px;
   }
 
-  .carousel-buttons button {
+  .carousel-buttons a {
     font-size: 14px;
     padding: 12px 24px;
   }

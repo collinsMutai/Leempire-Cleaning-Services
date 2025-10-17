@@ -1,21 +1,27 @@
-<div class="container-fluid main-container" id="services">
+<div class="container-fluid main-container" id="services" role="region" aria-labelledby="services-title">
   <div class="row justify-content-center">
-    <h1 class="title">Our Cleaning Services</h1>
+    <!-- Section Heading includes location -->
+    <h2 id="services-title" class="title">Our Cleaning Services in Acworth, GA</h2>
 
-    <div
-      class="col-12 col-md-4"
-      
-      
+    <section
+      class="col-12 col-md-4 mb-4"
+      *ngFor="let service of services"
+      [attr.aria-label]="service.title + ' service'"
     >
-      <div class="card" #serviceCard>
-        <img src="https://smartdata.tonytemplates.com/cleaning-service-v3/ele-demo1/wp-content/uploads/sites/7/2017/06/service-circle-4.png" class="card-img-top" alt="Image" />
+      <article class="card service-card h-100">
+        <img
+          [src]="service.url"
+          class="card-img-top"
+          [alt]="service.alt"
+          loading="lazy"
+          [width]="service.width || null"
+          [height]="service.height || null"
+        />
         <div class="card-body">
-          <h5 class="card-title">Commercial Cleaning</h5>
-          <p class="card-text">
-            Professional cleaning staff with attention to detail.
-          </p>
+          <h3 class="card-title h5">{{ service.title }}</h3>
+          <p class="card-text">{{ service.caption }}</p>
         </div>
-      </div>
-    </div>
+      </article>
+    </section>
   </div>
 </div>

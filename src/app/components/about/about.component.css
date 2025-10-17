@@ -31,6 +31,12 @@
   }
 }
 
+.about-text strong {
+  font-weight: 700; /* Adjust to match your design system */
+  color: #333;   /* Optional: Slightly darker tone for emphasis */
+}
+
+
 .main-container {
   padding: 60px 20px;
   opacity: 0;
@@ -76,7 +82,7 @@
   font-weight: 500;
   line-height: 26px;
   margin-bottom: 10px;
-  color: #7a7f88;
+  color: #333333;
 }
 
 .action-btn {
@@ -100,7 +106,9 @@
   margin-top: 15px;
   transition: color 0.2s, background-color 0.2s, border-color 0.2s;
   animation: fadeInScaleUp 2s ease-out;
+  text-decoration: none;
 }
+
 
 .action-btn:hover {
   color: #90c73e;

@@ -9,28 +9,32 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   imports: [CommonModule],
 })
 export class ImageSliderComponent implements OnInit, OnDestroy {
-  images: { src: string; heading: string; caption: string }[] = [
-    {
-      src: 'https://cleaning.ancorathemes.com/wp-content/uploads/2023/10/179_3-3-copyright.jpg',
-      heading: 'Professional Cleaning Services',
-      caption: 'Your home, your sanctuary. Cleaned to perfection.',
-    },
-    {
-      src: 'https://cleaning.ancorathemes.com/wp-content/uploads/2023/10/179_3-1-copyright.jpg',
-      heading: 'Eco-Friendly Cleaning',
-      caption: 'Committed to sustainable and green practices.',
-    },
-    {
-      src: 'https://cleaning.ancorathemes.com/wp-content/uploads/2023/10/179_3-2-copyright.jpg',
-      heading: 'Experienced Cleaners',
-      caption: 'Trust our team to provide top-notch services.',
-    },
-    {
-      src: 'https://cleaning.ancorathemes.com/wp-content/uploads/2020/04/image-42-copyright-890x664.jpg',
-      heading: 'Customizable Packages',
-      caption: 'Choose a package that suits your needs.',
-    },
-  ];
+images: { src: string; heading: string; caption: string; alt: string }[] = [
+  {
+    src: 'assets/images/residential-cleaning-acworth-georgia.jpg',
+    heading: 'Residential Cleaning in Acworth, Georgia',
+    caption: 'Your home is your sanctuary — we clean it to perfection with care and precision.',
+    alt: 'Residential Cleaning in Acworth, Georgia - Acworth, Georgia Cleaning Services'
+  },
+  {
+    src: 'assets/images/eco-friendly-cleaning-acworth-ga.jpg',
+    heading: 'Eco-Friendly Cleaning Services',
+    caption: 'Sustainable, non-toxic cleaning solutions for a healthier home and planet.',
+    alt: 'Eco-Friendly Cleaning Services - Acworth, Georgia Cleaning Services'
+  },
+  {
+    src: 'assets/images/professional-cleaners-acworth-ga.jpg',
+    heading: 'Experienced Professional Cleaners',
+    caption: 'Trusted, background-checked cleaning experts with a proven track record in Acworth.',
+    alt: 'Experienced Professional Cleaners - Acworth, Georgia Cleaning Services'
+  },
+  {
+    src: 'assets/images/custom-cleaning-packages-georgia.jpg',
+    heading: 'Custom Cleaning Packages in Georgia',
+    caption: 'Flexible service plans designed to meet your unique needs and schedule.',
+    alt: 'Custom Cleaning Packages in Georgia'
+  }
+];
 
   currentIndex = 0;
 
@@ -41,7 +45,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.slideInterval = setInterval(() => {
       this.moveToNext();
-    }, 3000);
+    }, 5000);
   }
 
   ngOnDestroy(): void {
