@@ -1,0 +1,39 @@
+<section class="faq-section" id="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="accordion-container">
+    <div class="accordion" id="faqAccordion">
+      <div
+        class="accordion-item"
+        #accordionItem
+        *ngFor="let faq of faqs; let i = index"
+        [id]="'faq-item-' + i"
+      >
+        <h2 class="accordion-header" [id]="'heading' + i">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            [attr.data-bs-target]="'#collapse' + i"
+            [attr.aria-expanded]="i === 0 ? 'true' : 'false'"
+            [attr.aria-controls]="'collapse' + i"
+            [class.collapsed]="i !== 0"
+          >
+            {{ faq.question }}
+          </button>
+        </h2>
+        <div
+          [id]="'collapse' + i"
+          class="accordion-collapse collapse"
+          [class.show]="i === 0"
+          [attr.aria-labelledby]="'heading' + i"
+          data-bs-parent="#faqAccordion"
+        >
+          <div class="accordion-body">
+            {{ faq.answer }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

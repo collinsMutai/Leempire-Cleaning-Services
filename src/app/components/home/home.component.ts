@@ -5,6 +5,7 @@ import { AboutComponent } from '../about/about.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { ContactComponent } from '../contact/contact.component';
 import { FooterComponent } from '../footer/footer.component';
+import { FaqComponent } from "../faq/faq.component";
 
 @Component({
   selector: 'app-home',
@@ -15,8 +16,9 @@ import { FooterComponent } from '../footer/footer.component';
     AboutComponent,
     ServicesCarouselComponent,
     ContactComponent,
-    FooterComponent
-  ],
+    FooterComponent,
+    FaqComponent
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

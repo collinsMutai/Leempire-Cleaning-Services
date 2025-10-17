@@ -1,0 +1,120 @@
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.faq-section {
+  padding: 60px 100px;
+}
+
+.faq-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #051729;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+/* Accordion container */
+.accordion-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Accordion items initially hidden */
+.accordion-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Animate in when in view */
+.accordion-item.in-view {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Staggered animation delays */
+.accordion-item:nth-child(1).in-view {
+  animation-delay: 0.2s;
+}
+.accordion-item:nth-child(2).in-view {
+  animation-delay: 0.4s;
+}
+.accordion-item:nth-child(3).in-view {
+  animation-delay: 0.6s;
+}
+.accordion-item:nth-child(4).in-view {
+  animation-delay: 0.8s;
+}
+.accordion-item:nth-child(5).in-view {
+  animation-delay: 1s;
+}
+
+/* Bootstrap accordion button overrides */
+.accordion-button {
+  background-color: #0a1129;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Focus state */
+.accordion-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #0a1129; /* subtle green focus glow */
+  background-color: #0a1129;
+  color: white;
+}
+
+/* Expanded state */
+.accordion-button:not(.collapsed) {
+  background-color: #0a1129;
+  color: white;
+}
+
+/* Make accordion arrow white */
+.accordion-button::after {
+  filter: brightness(0) invert(1);
+  border-bottom-color: white !important;
+  border-right-color: white !important;
+  transition: border-color 0.3s ease;
+}
+
+/* When expanded, keep arrow white */
+.accordion-button:not(.collapsed)::after {
+  border-bottom-color: white !important;
+  border-right-color: white !important;
+}
+
+/* Focus state arrow color white */
+.accordion-button:focus::after {
+  border-bottom-color: white !important;
+  border-right-color: white !important;
+}
+
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 20px;
+  }
+
+  .accordion-container {
+    max-width: 100%;
+  }
+}

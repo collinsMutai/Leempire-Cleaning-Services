@@ -44,7 +44,7 @@ export class ServicesCarouselComponent implements OnInit, AfterViewInit {
       height: 300,
     },
     {
-      url: 'assets/images/commercial-cleaning-acworth-ga.jpg',
+      url: 'assets/images/residential-commercial-cleaning-acworth-ga.jpg',
       title: 'Commercial Cleaning',
       caption: 'Professional commercial cleaning for offices, retail, and business spaces.',
       alt: 'Commercial cleaning service by LeEmpire Cleaning Services in Acworth, GA',
