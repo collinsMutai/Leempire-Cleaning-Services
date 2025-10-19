@@ -11,10 +11,10 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class ImageSliderComponent implements OnInit, OnDestroy {
 images: { src: string; heading: string; caption: string; alt: string }[] = [
   {
-    src: 'assets/images/residential-cleaning-acworth-georgia.jpg',
-    heading: 'Residential Cleaning in Acworth, Georgia',
+    src: 'assets/images/commercial-cleaning-acworth-georgia.jpg',
+    heading: 'Commercial Cleaning in Acworth, Georgia',
     caption: 'Your home is your sanctuary — we clean it to perfection with care and precision.',
-    alt: 'Residential Cleaning in Acworth, Georgia - Acworth, Georgia Cleaning Services'
+    alt: 'Commercial Cleaning in Acworth, Georgia - Acworth, Georgia Cleaning Services'
   },
   {
     src: 'assets/images/eco-friendly-cleaning-acworth-ga.jpg',
