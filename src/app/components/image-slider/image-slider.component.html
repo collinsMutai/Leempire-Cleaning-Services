@@ -11,17 +11,22 @@
       [ngClass]="{ active: i === currentIndex }"
       [attr.aria-hidden]="i !== currentIndex"
     >
-      <img
-        [src]="image.src"
-        [alt]="image.alt"
-        loading="lazy"
-      />
+      <!-- WebP + JPG fallback using <picture> -->
+      <picture>
+        <source [srcset]="image.webp" type="image/webp" />
+        <source [srcset]="image.jpg" type="image/jpeg" />
+        <img
+          [src]="image.jpg"
+          [alt]="image.alt"
+          loading="lazy"
+          width="100%"
+          height="auto"
+        />
+      </picture>
 
       <div class="carousel-caption">
-        <!-- Local SEO optimized caption -->
         <p class="carousel-caption-text">
-          Veteran-owned cleaning company serving Acworth, Georgia & surrounding
-          areas
+          Veteran-owned cleaning company serving Acworth, Georgia & surrounding areas
         </p>
 
         <!-- SEO-optimized conditional heading -->
@@ -31,9 +36,7 @@
         <!-- Functional CTA buttons with routing -->
         <div class="carousel-buttons">
           <a routerLink="/about" class="btn btn-primary">Learn More About Us</a>
-          <a routerLink="/contact" class="btn btn-secondary"
-            >Get a Free Quote</a
-          >
+          <a routerLink="/contact" class="btn btn-secondary">Get a Free Quote</a>
         </div>
       </div>
     </div>

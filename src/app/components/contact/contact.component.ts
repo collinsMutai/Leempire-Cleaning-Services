@@ -10,6 +10,8 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import emailjs from '@emailjs/browser';
 import { environment } from '../../../environments/environment';
 
+declare let gtag: Function; // ✅ Declare GA4 function globally
+
 @Component({
   selector: 'app-contact',
   standalone: true,
@@ -32,7 +34,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {}
 
-  // ✅ Keeping your original observer logic unchanged
+  // ✅ Your existing IntersectionObserver (unchanged)
   ngAfterViewInit(): void {
     const elements = document.querySelectorAll('.animate-on-scroll');
     const observer = new IntersectionObserver(
@@ -50,6 +52,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
     elements.forEach((element) => observer.observe(element));
   }
 
+  // ✅ Send Email + Track GA4 event
   onSubmit(): void {
     if (this.contactForm.invalid) {
       this.showSnack('⚠️ Please fill in all required fields.', 'Close');
@@ -75,6 +78,15 @@ export class ContactComponent implements OnInit, AfterViewInit {
         this.isSending = false;
         this.contactForm.reset();
         this.showSnack('✅ Message sent successfully!', 'Close');
+
+        // ✅ Track form submission event in Google Analytics
+        if (typeof gtag === 'function') {
+          gtag('event', 'request_quote', {
+            event_category: 'lead',
+            event_label: 'Contact Form Submission',
+            value: 1,
+          });
+        }
       })
       .catch((error) => {
         this.isSending = false;

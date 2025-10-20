@@ -11,49 +11,49 @@ import { CommonModule } from '@angular/common';
 export class FaqComponent implements AfterViewInit {
   faqs = [
     {
-      question: 'Do you offer one-time deep cleaning in Acworth?',
+      question: 'Do you offer commercial cleaning in Acworth, GA?',
       answer:
-        'Yes, we provide one-time deep cleaning services in Acworth, GA for move-ins, move-outs, special events, and seasonal cleanings.',
+        'Yes, we specialize in professional commercial cleaning services throughout Acworth, GA. Our team ensures every workspace is spotless, safe, and ready for business.',
     },
     {
-      question: 'Are your cleaners insured and background-checked?',
+      question: 'Are your commercial cleaners insured and background-checked?',
       answer:
-        'Absolutely. All of our professional cleaners in Acworth are fully insured, bonded, and undergo thorough background checks.',
+        'Absolutely. All LeEmpire commercial cleaning professionals in Acworth are fully insured, bonded, and background-checked for your peace of mind.',
     },
     {
-      question: 'Do you offer after-hours or weekend cleaning?',
+      question: 'Can you clean after business hours?',
       answer:
-        'Yes, we can accommodate after-hours and weekend cleaning appointments in Acworth—perfect for commercial spaces and busy households.',
+        'Yes. We offer flexible scheduling for Acworth businesses, including after-hours and weekend commercial cleaning to avoid disrupting your operations.',
     },
     {
-      question: 'Do I need to provide cleaning supplies?',
+      question: 'Do you bring your own cleaning products and equipment?',
       answer:
-        'No, we bring our own eco-friendly, non-toxic cleaning products and equipment for all cleaning services in Acworth.',
+        'Yes, we supply all professional-grade, eco-friendly cleaning products and equipment needed for every commercial cleaning project in Acworth.',
     },
     {
-      question: 'Can I customize my cleaning checklist?',
+      question: 'Can I customize my commercial cleaning plan?',
       answer:
-        'Yes, all of our residential and commercial cleaning services in Acworth are fully customizable to match your needs and schedule.',
+        'Definitely. We provide fully customizable commercial cleaning plans to fit your specific facility type, schedule, and cleaning needs in Acworth, GA.',
     },
     {
-      question: 'Do you provide move-out cleaning in Acworth, GA?',
+      question: 'What types of businesses do you clean?',
       answer:
-        'Yes! Our move-out cleaning service helps tenants, landlords, and homeowners in Acworth prepare their property for a smooth transition.',
+        'We provide commercial cleaning for a variety of local Acworth businesses — including retail stores, clinics, warehouses, and corporate buildings.',
     },
     {
-      question: 'Is regular maid service available in Acworth, Georgia?',
+      question: 'How often should a business schedule commercial cleaning?',
       answer:
-        'We offer weekly, biweekly, and monthly maid services throughout Acworth, GA for both homes and small offices.',
+        'That depends on your facility size and foot traffic. Most Acworth businesses choose daily, weekly, or biweekly cleaning to maintain a healthy workspace.',
     },
     {
-      question: 'Do you clean commercial spaces in Acworth?',
+      question: 'Do you use eco-friendly cleaning products?',
       answer:
-        'Absolutely. Our commercial cleaning services in Acworth cover offices, retail stores, and local businesses of all sizes.',
+        'Yes, all of our commercial cleaning services in Acworth use non-toxic, eco-friendly products that are safe for employees, clients, and the environment.',
     },
     {
-      question: 'What makes you the best cleaning company in Acworth?',
+      question: 'Why choose LeEmpire Cleaning Services?',
       answer:
-        'As a veteran-owned and locally operated cleaning company in Acworth, we pride ourselves on detailed, reliable service and 5-star customer satisfaction.',
+        'LeEmpire Cleaning Services is a veteran-owned, locally operated commercial cleaning company serving Acworth, GA. We are known for reliability, attention to detail, and consistent 5-star service.',
     },
   ];
 
