@@ -13,6 +13,7 @@ export class NavbarComponent {
   isMenuOpen = false;
   activeLink = 'home';
   isMobile = false;
+  private scrollTimeout: any;
 
   @HostListener('window:resize', [])
   onResize() {
@@ -21,7 +22,14 @@ export class NavbarComponent {
 
   @HostListener('window:scroll', [])
   onScroll() {
-    this.highlightCurrentSection();
+    if (this.scrollTimeout) {
+      clearTimeout(this.scrollTimeout);
+    }
+    
+    // Debounce the scroll event
+    this.scrollTimeout = setTimeout(() => {
+      this.highlightCurrentSection();
+    }, 100);  // Adjust the timeout as needed
   }
 
   ngOnInit() {
@@ -51,6 +59,7 @@ export class NavbarComponent {
       const section = document.getElementById(id);
       if (section) {
         const rect = section.getBoundingClientRect();
+        // Use the top property for more reliable results
         if (rect.top <= 150 && rect.bottom >= 150) {
           this.activeLink = id;
           break;

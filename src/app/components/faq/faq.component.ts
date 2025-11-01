@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -13,7 +13,7 @@ export class FaqComponent implements AfterViewInit {
     {
       question: 'Do you offer commercial cleaning in Acworth, GA?',
       answer:
-        'Yes, we specialize in professional commercial cleaning services throughout Acworth, GA. Our team ensures every workspace is spotless, safe, and ready for business.',
+        'Yes, we specialize in professional commercial cleaning services throughout Acworth, GA.',
     },
     {
       question: 'Are your commercial cleaners insured and background-checked?',
@@ -53,11 +53,11 @@ export class FaqComponent implements AfterViewInit {
     {
       question: 'Why choose LeEmpire Cleaning Services?',
       answer:
-        'LeEmpire Cleaning Services is a veteran-owned, locally operated commercial cleaning company serving Acworth, GA. We are known for reliability, attention to detail, and consistent 5-star service.',
+        'LeEmpire Cleaning Services is a veteran-owned, locally operated commercial cleaning company serving Acworth, GA.',
     },
   ];
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     const accordionItems = document.querySelectorAll('.accordion-item');
 
     const observer = new IntersectionObserver(
@@ -65,17 +65,21 @@ export class FaqComponent implements AfterViewInit {
         entries.forEach((entry) => {
           const el = entry.target as HTMLElement;
           if (entry.isIntersecting) {
-            el.classList.add('in-view');
+            if (!el.classList.contains('in-view')) {
+              el.classList.add('in-view');
+            }
           } else {
             el.classList.remove('in-view');
           }
         });
       },
-      {
-        threshold: 0.5,
-      }
+      { threshold: 0.5 }
     );
 
     accordionItems.forEach((item) => observer.observe(item));
+  }
+
+  trackByFn(index: number, item: any): number {
+    return index; // or use a unique identifier if available (e.g., item.id)
   }
 }

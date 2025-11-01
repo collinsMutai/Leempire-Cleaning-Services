@@ -66,21 +66,46 @@
     <link rel="canonical" href="https://leempirecleaningservices.com/" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=1.0.1" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap?v=1.0.1"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap?v=1.0.1"
+      />
+    </noscript>
 
     <!-- Font Awesome -->
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css?v=1.0.1"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css?v=1.0.1"
+      />
+    </noscript>
+
+    <!-- Main CSS (deferred) -->
+    <link
+      rel="stylesheet"
+      href="styles.css?v=1.0.1"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript><link rel="stylesheet" href="styles.css?v=1.0.1" /></noscript>
 
     <!-- ✅ Schema Markup for Local Business -->
     <script type="application/ld+json">
@@ -91,10 +116,8 @@
         "image": "https://www.leempirecleaningservices.com/assets/images/commercial-cleaning-acworth-ga.jpg",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "",
           "addressLocality": "Acworth",
           "addressRegion": "GA",
-          "postalCode": "30101",
           "addressCountry": "US"
         },
         "geo": {
@@ -102,31 +125,31 @@
           "latitude": "34.0754",
           "longitude": "-84.6577"
         },
+        "serviceArea": {
+          "@type": "Place",
+          "name": "Acworth, GA"
+        },
         "url": "https://www.leempirecleaningservices.com",
         "telephone": "+1 (470) 772-1935",
         "email": "info@leempirecleaningservices.com",
         "priceRange": "$$",
         "description": "Veteran-owned commercial cleaning company in Acworth, GA. Providing professional, eco-friendly cleaning services for local businesses.",
         "openingHours": "Mo-Fr 08:00-18:00",
-        "sameAs": [
-          "https://www.facebook.com/leempirecleaning",
-          "https://www.instagram.com/leempirecleaning"
-        ]
+        "sameAs": []
       }
     </script>
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Defer Google Analytics Script -->
     <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-16ETKE5VRT"
+      defer
+      src="https://www.googletagmanager.com/gtag/js?id=G-16ETKE5VRT?v=1.0.1"
     ></script>
-    <script>
+    <script defer>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-16ETKE5VRT");
     </script>
   </head>

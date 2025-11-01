@@ -1,25 +1,27 @@
 <nav class="navbar">
   <div class="navbar-container">
-    <a class="logo brand-name" href="#">LeEmpire Cleaning</a>
+    <a class="logo brand-name" href="#" aria-label="LeEmpire Cleaning homepage">LeEmpire Cleaning</a>
 
-    <div class="menu-icon" (click)="toggleMenu()">
+    <!-- Hamburger Menu for Mobile -->
+    <div class="menu-icon" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen ? 'true' : 'false'" aria-label="Toggle navigation menu">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </div>
 
+    <!-- Navigation Links -->
     <ul class="nav-links" [class.active]="isMenuOpen">
       <li>
-        <a class="nav-link" [class.active]="activeLink==='home'" (click)="navigateTo('home')">Home</a>
+        <a class="nav-link" [class.active]="activeLink==='home'" (click)="navigateTo('home')" [attr.aria-label]="'Go to Home section'">Home</a>
       </li>
       <li>
-        <a class="nav-link" [class.active]="activeLink==='about'" (click)="navigateTo('about')">About</a>
+        <a class="nav-link" [class.active]="activeLink==='about'" (click)="navigateTo('about')" [attr.aria-label]="'Go to About section'">About</a>
       </li>
       <li>
-        <a class="nav-link" [class.active]="activeLink==='services'" (click)="navigateTo('services')">Services</a>
+        <a class="nav-link" [class.active]="activeLink==='services'" (click)="navigateTo('services')" [attr.aria-label]="'Go to Services section'">Services</a>
       </li>
       <li>
-        <a class="nav-link" [class.active]="activeLink==='contact'" (click)="navigateTo('contact')">Contact</a>
+        <a class="nav-link" [class.active]="activeLink==='contact'" (click)="navigateTo('contact')" [attr.aria-label]="'Go to Contact section'">Contact</a>
       </li>
     </ul>
   </div>

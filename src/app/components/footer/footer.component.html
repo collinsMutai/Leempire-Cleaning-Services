@@ -9,14 +9,20 @@
       <!-- NAP Block (Visible & SEO Friendly) -->
       <address itemscope itemtype="https://schema.org/LocalBusiness">
         <span itemprop="name">LeEmpire Cleaning Services</span><br />
-        <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-          <span itemprop="streetAddress">123 Main Street</span><br />
-          <span itemprop="addressLocality">Acworth</span>,
-          <span itemprop="addressRegion">GA</span>
-          <span itemprop="postalCode">30101</span><br />
+        
+        <!-- Updated Service Area Information -->
+        <span itemprop="serviceArea" itemscope itemtype="https://schema.org/Place">
+          <span itemprop="name">Acworth, GA</span><br />
         </span>
-        Phone: <a href="tel:+14707721935" itemprop="telephone">(470) 772-1935</a><br />
-        Email: <a href="mailto:info@leempirecleaningservices.com" itemprop="email">info&#64;leempirecleaningservices.com</a>
+        
+        Phone: 
+        <a href="tel:+14707721935" itemprop="telephone" aria-label="Call LeEmpire Cleaning Services">
+          (470) 772-1935
+        </a><br />
+        Email: 
+        <a href="mailto:info@leempirecleaningservices.com" itemprop="email" aria-label="Email LeEmpire Cleaning Services">
+          info&#64;leempirecleaningservices.com
+        </a>
       </address>
     </div>
 
@@ -24,10 +30,10 @@
     <div class="col-md-4">
       <h4 class="footer-title">Menu</h4>
       <ul class="menu-links">
-        <li><a (click)="navigateTo('home')">Home</a></li>
-        <li><a (click)="navigateTo('about')">About</a></li>
-        <li><a (click)="navigateTo('services')">Services</a></li>
-        <li><a (click)="navigateTo('contact')">Contact</a></li>
+        <li><a (click)="navigateTo('home')" aria-label="Go to Home section">Home</a></li>
+        <li><a (click)="navigateTo('about')" aria-label="Go to About section">About</a></li>
+        <li><a (click)="navigateTo('services')" aria-label="Go to Services section">Services</a></li>
+        <li><a (click)="navigateTo('contact')" aria-label="Go to Contact section">Contact</a></li>
       </ul>
     </div>
 
@@ -35,14 +41,23 @@
     <div class="col-md-4">
       <h4 class="footer-title">Follow Us</h4>
       <div class="social-icons">
-        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="social-icon" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-icon" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="social-icon" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="social-icon" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
       </div>
     </div>
   </div>
 
+  <!-- Footer Credits -->
   <div class="credits">
     <p class="footer-text">
       &copy; <span id="currentYear">{{ currentYear }}</span> LeEmpire. All rights reserved.

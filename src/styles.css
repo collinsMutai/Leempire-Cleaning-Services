@@ -1,7 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
-
+/* Global Styles */
 body {
-  font-family: "Roboto", serif;
+  font-family: "Roboto", Arial, sans-serif;
+  font-display: swap;
 }
 
 h1,
@@ -10,9 +10,43 @@ h3,
 h4,
 button,
 a {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", Arial, sans-serif;
+  font-display: swap;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Button and Link Styling */
+button {
+  font-family: "Poppins", sans-serif;
+  background: none;
+  border: 2px solid transparent;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
 }

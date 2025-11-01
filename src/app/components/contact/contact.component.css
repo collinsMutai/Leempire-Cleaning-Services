@@ -1,11 +1,30 @@
+/* Snackbar Styles */
 .contact-snackbar {
   background: #333 !important;
   color: #fff !important;
   font-weight: 500;
   border-radius: 6px !important;
+  padding: 12px 20px;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
 }
 
+.contact-snackbar.show {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
 
+/* Fade-in animation */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -29,6 +48,7 @@
   animation: fadeInUp 1s ease-out forwards;
 }
 
+/* Main Container */
 .main-container {
   padding: 60px 100px;
 }
@@ -58,6 +78,7 @@
   color: #7a7f88;
 }
 
+/* Contact Items */
 .contact-items {
   display: flex;
   align-items: center;
@@ -70,6 +91,7 @@
   width: 20px;
 }
 
+/* Form Styles */
 form {
   background-color: white;
   border-radius: 5px;
@@ -77,14 +99,16 @@ form {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Input and Textarea Focus Styles */
 input:focus,
 textarea:focus {
   outline: none !important;
   box-shadow: none !important;
   border: none !important;
-  border-bottom: 2px solid #ccc !important;
+  border-bottom: 2px solid #90c73e !important;  /* Green underline on focus */
 }
 
+/* Form Groups */
 .form-group {
   margin-bottom: 15px;
 }
@@ -115,6 +139,7 @@ textarea:focus {
   outline: none;
   background: transparent;
   color: #7a7f88;
+  font-size: 14px;
 }
 
 .form-control:focus {
@@ -151,6 +176,7 @@ textarea.form-control:focus {
   outline: none;
 }
 
+/* Button Styles */
 button.btn {
   width: 180px;
   padding: 12px;
@@ -160,12 +186,18 @@ button.btn {
   border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 button.btn:hover {
   background-color: #76b432;
 }
 
+button.btn:focus {
+  outline: 3px solid #76b432; /* Custom focus outline */
+}
+
+/* Media Queries for Responsive Design */
 @media (max-width: 768px) {
   .main-container {
     padding: 20px;
@@ -177,11 +209,24 @@ button.btn:hover {
     justify-content: center;
   }
 
-  .col-md-6{
+  .col-md-6 {
     width: 100%;
   }
 
   .title {
     text-align: center;
+  }
+
+  .contact-title {
+    font-size: 18px;
+  }
+
+  .contact-text {
+    font-size: 14px;
+  }
+
+  button.btn {
+    width: 100%;
+    padding: 14px;
   }
 }

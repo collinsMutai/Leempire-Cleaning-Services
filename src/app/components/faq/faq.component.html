@@ -5,8 +5,7 @@
     <div class="accordion" id="faqAccordion">
       <div
         class="accordion-item"
-        #accordionItem
-        *ngFor="let faq of faqs; let i = index"
+        *ngFor="let faq of faqs; let i = index; trackBy: trackByFn"
         [id]="'faq-item-' + i"
       >
         <h2 class="accordion-header" [id]="'heading' + i">

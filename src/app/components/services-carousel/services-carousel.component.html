@@ -1,14 +1,25 @@
-<div class=" main-container" id="services" role="region" aria-labelledby="services-title">
+<div
+  class="main-container"
+  id="services"
+  role="region"
+  aria-labelledby="services-title"
+>
   <div class="row justify-content-center">
     <!-- Section Heading includes location -->
-    <h2 id="services-title" class="title">Our Cleaning Services in Acworth, GA</h2>
+    <h2 id="services-title" class="title" tabindex="0">
+      Our Cleaning Services in Acworth, GA
+    </h2>
 
     <section
       class="col-12 col-md-4 mb-4"
       *ngFor="let service of services"
       [attr.aria-label]="service.title + ' service'"
     >
-      <article class="card service-card h-100">
+      <article
+        class="card service-card h-100"
+        [attr.aria-labelledby]="'service-' + service.title"
+        tabindex="0"
+      >
         <img
           [src]="service.url"
           class="card-img-top"
@@ -16,10 +27,15 @@
           loading="lazy"
           [width]="service.width || null"
           [height]="service.height || null"
+          [attr.aria-describedby]="'service-caption-' + service.title"
         />
         <div class="card-body">
-          <h3 class="card-title h5">{{ service.title }}</h3>
-          <p class="card-text">{{ service.caption }}</p>
+          <h3 class="card-title h5" id="service-{{ service.title }}">
+            {{ service.title }}
+          </h3>
+          <p class="card-text" id="service-caption-{{ service.title }}">
+            {{ service.caption }}
+          </p>
         </div>
       </article>
     </section>

@@ -141,6 +141,11 @@ address a:hover {
     align-items: center;
     justify-content: center;
   }
+  
+  .top-row {
+    padding-top: 50px; /* Reduced top padding for mobile */
+    padding-bottom: 50px; /* Reduced bottom padding for mobile */
+  }
 
   .title {
     text-align: center;

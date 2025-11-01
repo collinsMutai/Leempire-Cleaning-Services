@@ -22,6 +22,7 @@ declare let gtag: Function; // ✅ Declare GA4 function globally
 export class ContactComponent implements OnInit, AfterViewInit {
   contactForm: FormGroup;
   isSending = false;
+  isFormSubmitted = false; // To control form submission feedback
 
   constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {
     this.contactForm = this.fb.group({
@@ -34,7 +35,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {}
 
-  // ✅ Your existing IntersectionObserver (unchanged)
+  // ✅ IntersectionObserver for animations (unchanged)
   ngAfterViewInit(): void {
     const elements = document.querySelectorAll('.animate-on-scroll');
     const observer = new IntersectionObserver(
@@ -55,6 +56,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
   // ✅ Send Email + Track GA4 event
   onSubmit(): void {
     if (this.contactForm.invalid) {
+      this.isFormSubmitted = true;
       this.showSnack('⚠️ Please fill in all required fields.', 'Close');
       return;
     }
@@ -77,6 +79,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
       .then(() => {
         this.isSending = false;
         this.contactForm.reset();
+        this.isFormSubmitted = false; // Reset the form submission flag
         this.showSnack('✅ Message sent successfully!', 'Close');
 
         // ✅ Track form submission event in Google Analytics
@@ -102,5 +105,20 @@ export class ContactComponent implements OnInit, AfterViewInit {
       verticalPosition: 'top',
       panelClass: ['contact-snackbar'],
     });
+  }
+
+  // Accessor for form control errors
+  getErrorMessage(controlName: string): string {
+    const control = this.contactForm.get(controlName);
+    if (control?.hasError('required')) {
+      return `${controlName.charAt(0).toUpperCase() + controlName.slice(1)} is required.`;
+    }
+    if (control?.hasError('pattern')) {
+      return `Please enter a valid ${controlName}.`;
+    }
+    if (control?.hasError('email')) {
+      return `Please enter a valid email.`;
+    }
+    return '';
   }
 }
